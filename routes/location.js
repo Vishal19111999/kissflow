@@ -8,6 +8,8 @@ var fs = require('fs');
 /* GET location listing. */
 router.post('/', function(req, res, next) {
 
+  const latt = req.body.Latitude
+  const long = req.body.Longitude
 
   var options = {
     'method': 'POST',
@@ -38,8 +40,8 @@ router.post('/', function(req, res, next) {
   });
 
   var postData = JSON.stringify({
-    "Latitude": 32432.324,
-    "Longitude": 123121.434
+    "Latitude": latt,
+    "Longitude": long
   });
 
   req.write(postData);
